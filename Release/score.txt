@@ -1,0 +1,10 @@
+player1
+1000
+player2
+500
+player3
+200
+player1
+152
+player4
+66
