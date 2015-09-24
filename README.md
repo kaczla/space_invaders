@@ -36,6 +36,24 @@ Stworzone w 2013 roku.
 </br>
 </br>
 
+#### Pakiety dla Ubuntu:
+
+sudo apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-ttf2.0-dev
+</br>
+</br>
+
+### Budowanie:
+
+Zbudować poleceniem **make** w katalogu **Release**.
+</br>
+</br>
+
+### Uruchomienie:
+
+Uruchomić aplikację **space_invaders** w katalogu **Release** ( wcześniej budując ! ).
+</br>
+</br>
+
 ## Uwagi:
 
 Pierwszy projekt w **[SDL 1.2](https://www.libsdl.org)**
