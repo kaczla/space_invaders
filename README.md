@@ -1,10 +1,14 @@
 ## space_invaders
+[C++] Projekt - Programowanie Obiektowe (SDL 1.2)
+</br>
 
 ### Opis:
 
 Strzelanie w statki poruszające się od prawej do lewej strony.
 </br>
 Stworzone w 2013 roku.
+</br>
+Wersja dla SDL 2: **[LINK](https://github.com/kaczla/space_invaders_2)**
 </br>
 </br>
 
