@@ -45,8 +45,8 @@ void DrawSurface(SDL_Surface *screen, SDL_Surface *sprite, SDL_Rect &where, SDL_
 }
 
 void SetScreen(SDL_Surface *screen){
-	//Po wyjsciu z funckji zapomina jakie by≥y ustawienia okna
-	//Nie moøna wskaünikowi tego przypisaÊ ;/
+	//Po wyjsciu z funckji zapomina jakie by≈Çy ustawienia okna
+	//Nie mo≈ºna wska≈∫nikowi tego przypisaƒá ;/
 }
 
 Engine engine;
@@ -66,7 +66,7 @@ void TextItalic(){
 void LoadImages(){
 	engine.bg = IMG_Load("images/bg.png");
 	if(engine.bg == NULL){
-		std::cerr<<"Nie wczytano t≥a: images/bg.png !"<<std::endl;
+		std::cerr<<"Nie wczytano t≈Ça: images/bg.png !"<<std::endl;
 		ClearGame();
 		exit(1);
 	}
@@ -82,7 +82,7 @@ void LoadImages(){
 
 	engine.button = IMG_Load("images/buttons.png");
 	if(engine.button == NULL){
-		std::cerr<<"Nie wczytano grafiki przyciskÛw: images/buttons.png !"<<std::endl;
+		std::cerr<<"Nie wczytano grafiki przycisk√≥w: images/buttons.png !"<<std::endl;
 		ClearGame();
 		exit(1);
 	}
@@ -121,7 +121,7 @@ void DrawButton(SDL_Surface *screen,SDL_Rect &where, unsigned int i){
 		SDL_BlitSurface(engine.button, &engine.button2, screen, &where);
 	}
 	else{
-		std::cerr<<"Nie prawid≥owy argument 'i' dla 'DrawButton()'! Tylko i=0 lub i=1!"<<std::endl;
+		std::cerr<<"Nie prawid≈Çowy argument 'i' dla 'DrawButton()'! Tylko i=0 lub i=1!"<<std::endl;
 		ClearGame();
 		exit(1);
 	}
@@ -189,15 +189,6 @@ void DrawItem(SDL_Surface *screen, SDL_Rect &where, unsigned int a){
 		SDL_BlitSurface(engine.player, &engine.item[1] , screen, &where);
 	else
 		SDL_BlitSurface(engine.player, &engine.item[0] , screen, &where);
-}
-
-void ClearImages(){
-	SDL_FreeSurface(engine.icon);
-	SDL_FreeSurface(engine.bg);
-	SDL_FreeSurface(engine.button);
-	TTF_CloseFont(engine.font);
-	TTF_CloseFont(engine.font_small);
-	SDL_FreeSurface(engine.player);
 }
 
 void refreshScreen(SDL_Surface *screen){
@@ -293,27 +284,26 @@ string ReadNickname(SDL_Surface *screen){
 
 void InitGame(){
 	if(SDL_Init(SDL_INIT_VIDEO)==-1){
-		std::cerr<<"B≥πd inicjalizacji: SDL_Init(SDL_INIT_VIDEO) :"<<SDL_GetError()<<std::endl;
+		std::cerr<<"B≈ÇƒÖd inicjalizacji: SDL_Init(SDL_INIT_VIDEO) :"<<SDL_GetError()<<std::endl;
 		exit(1);
 	}
 	if(TTF_Init()!=0){
-		std::cerr<<"B≥πd inicjalizacji TTF_Init() :"<<TTF_GetError()<<std::endl;
+		std::cerr<<"B≈ÇƒÖd inicjalizacji TTF_Init() :"<<TTF_GetError()<<std::endl;
 		SDL_Quit();
 		exit(1);
 	}
-	//std::cout<<"Pomyúlnie zainicjalizowano SDL!"<<std::endl;
+	//std::cout<<"Pomy≈õlnie zainicjalizowano SDL!"<<std::endl;
 	SDL_ShowCursor(SDL_DISABLE);
 	LoadImages();
-	//std::cout<<"Pomyúlnie wczytano grafikÍ!"<<std::endl;
+	//std::cout<<"Pomy≈õlnie wczytano grafikƒô!"<<std::endl;
 }
 
 void ClearGame(){
-	ClearImages();
 	TTF_Quit();
 	IMG_Quit();
 	SDL_Quit();
 	//TIME <ctime>
-	//std::cout<<"PamiÍÊ zosta≥a zwolniona pomyúlnie zwolniona!"<<std::endl;
+	//std::cout<<"Pamiƒôƒá zosta≈Ça zwolniona pomy≈õlnie zwolniona!"<<std::endl;
 }
 
 void Wait(unsigned int How_Secund){
@@ -433,6 +423,12 @@ Engine::Engine(){
 }
 
 Engine::~Engine(){
+	SDL_FreeSurface(this->icon);
+	SDL_FreeSurface(this->bg);
+	SDL_FreeSurface(this->button);
+	TTF_CloseFont(this->font);
+	TTF_CloseFont(this->font_small);
+	SDL_FreeSurface(this->player);
 	ClearGame();
 }
 

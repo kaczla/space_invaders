@@ -26,7 +26,6 @@ void DrawPlayer(SDL_Surface *screen,SDL_Rect &where, unsigned int a);
 void DrawEnemy(SDL_Surface *screen,SDL_Rect &where, unsigned int a);
 void DrawAmmo(SDL_Surface *screen,SDL_Rect &where, unsigned int a);
 void DrawItem(SDL_Surface *screen,SDL_Rect &where, unsigned int a);
-void ClearImages();
 void refreshScreen(SDL_Surface *screen);
 void DrawText(SDL_Surface *screen, string a, SDL_Color &color);
 void DrawText(SDL_Surface *screen, string a, SDL_Color &color, SDL_Rect &where);
@@ -83,7 +82,6 @@ class Engine{
 		friend void DrawTextSmall(SDL_Surface *screen, string a, SDL_Color &color);
 		friend void DrawTextSmall(SDL_Surface *screen, string a, SDL_Color &color, SDL_Rect &where);
 		friend void DrawTimeGame(SDL_Surface *screen, clock_t a, SDL_Color &color, SDL_Rect &where);
-		friend void ClearImages();
 		friend void DrawButton(SDL_Surface *screen,SDL_Rect &where, unsigned int i);
 
 		friend void abc();
